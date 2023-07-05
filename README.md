@@ -4,9 +4,9 @@
  /тут когда-то будет ссылка на собранный проект/
 
  ### Used:
-   - Vite
+   - [Vite](https://vitejs.dev/)
    - [React](https://react.dev/) v.18.2
-   - React Router v.6.14
+   - [React Router](https://reactrouter.com/en/main)  v.6.14
    - 
    - Style: sass + CSS Modules
 
