@@ -5,8 +5,8 @@
 
  ### Used:
    - Vite
-   - React 18.2
-   - React Router 6.14
+   - React v.18.2
+   - React Router v.6.14
    - 
    - Style: sass + CSS Modules
 
