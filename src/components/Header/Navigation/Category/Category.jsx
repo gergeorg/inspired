@@ -1,22 +1,18 @@
 import cn from 'classnames'
 import style from './Category.module.scss'
-import { NavLink } from 'react-router-dom'
+import { NavLink, useLocation } from 'react-router-dom'
 
-const list = [
-	{ link: 'bras', title: 'Бюстгальтеры' },
-	{ link: 'underpants', title: 'Трусы' },
-	{ link: 'socks', title: 'Носки' },
-	{ link: 'bathrobes', title: 'Халаты' },
-	{ link: 'thermal', title: 'Термобелье' },
-	{ link: 'pajamas', title: 'Пижамы' },
-]
+export const Category = ({ list }) => {
+	const location = useLocation()
+	const gender = location.pathname.split('/')[1] || 'women'
 
-export const Category = () => {
+	const categoriesList = list.find((item) => item.link === gender)
+
 	return (
 		<ul className={style.category}>
-			{list.map((item) => (
+			{categoriesList.categories.map((item) => (
 				<li key={item.link} className={style.category}>
-					<NavLink className={({ isActive }) => cn(style.link, isActive && style.linkActive)} to={item.link}>
+					<NavLink className={({ isActive }) => cn(style.link, isActive && style.linkActive)} to={`${gender}/${item.link}`}>
 						{item.title}
 					</NavLink>
 				</li>

@@ -8,7 +8,7 @@ const router = createBrowserRouter(
 		<Route path='/' element={<Root />}>
 			<Route index element={<MainPage />} />
 			<Route path='women' element={<MainPage gender='women' />} />
-			<Route path='man' element={<MainPage gender='men' />} />
+			<Route path='men' element={<MainPage gender='men' />} />
 			<Route path='women/:category' element={<MainPage gender='women' />} />
 			<Route path='men/:category' element={<MainPage gender='men' />} />
 			<Route path='*' element={<ErrorPage />} />
