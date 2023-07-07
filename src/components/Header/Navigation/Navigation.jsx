@@ -6,8 +6,6 @@ import { useEffect } from 'react'
 import { useLocation } from 'react-router-dom'
 import { setActiveGender } from '../../../features/navigationSlice'
 
-import style from './Navigation.module.scss'
-
 export const Navigation = () => {
 	const dispatch = useDispatch()
 	const location = useLocation()
@@ -18,7 +16,7 @@ export const Navigation = () => {
 	}, [gender, dispatch])
 
 	return (
-		<nav className={style.navigation}>
+		<nav>
 			<Container>
 				<Gender />
 				<Category />

@@ -3,8 +3,7 @@ import { CATEGORY_URL } from '../const'
 
 export const fetchNavigation = createAsyncThunk('navigation/fetchNavigation', async () => {
 	const res = await fetch(CATEGORY_URL)
-	const data = await res.json()
-	return data
+	return await res.json()
 })
 
 const navigationSlice = createSlice({
