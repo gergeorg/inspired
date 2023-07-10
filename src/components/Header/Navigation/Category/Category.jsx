@@ -10,7 +10,7 @@ export const Category = () => {
 		<ul className={style.category}>
 			{categories[activeGender]?.list?.map((item) => (
 				<li key={item.slug} className={style.category}>
-					<NavLink className={({ isActive }) => cn(style.link, isActive && style.linkActive)} to={`${activeGender}/${item.slug}`}>
+					<NavLink className={({ isActive }) => cn(style.link, isActive && style.linkActive)} to={`/catalog/${activeGender}/${item.slug}`}>
 						{item.title}
 					</NavLink>
 				</li>
