@@ -8,12 +8,14 @@ import { ErrorPage } from './ErrorPage/ErrorPage'
 
 import { fetchNavigation } from './features/navigationSlice'
 import { fetchColors } from './features/colorSlice'
+import { ProductPage } from './components/ProductPage/ProductPage'
 
 const router = createBrowserRouter(
 	createRoutesFromElements(
 		<Route path='/' element={<Root />}>
 			<Route index element={<MainPage />} />
 			<Route path='catalog/:gender/:category?' element={<MainPage />} />
+			<Route path='product/:id' element={<ProductPage />} />
 			<Route path='*' element={<ErrorPage />} />
 		</Route>
 	)

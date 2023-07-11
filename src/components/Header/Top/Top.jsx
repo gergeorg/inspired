@@ -1,3 +1,5 @@
+import { NavLink } from 'react-router-dom'
+
 import { Container } from '../../Layout/Container/Container'
 
 import logo from './logo.svg'
@@ -13,9 +15,9 @@ export const Top = () => {
 					8 930 490 26 20
 				</a>
 
-				<a className={style.topLogo} href='/'>
+				<NavLink className={style.topLogo} href='/'>
 					<img src={logo} alt='Логотип Inspired' />
-				</a>
+				</NavLink>
 
 				<div className={style.topNavigation}>
 					<ul className={style.topNavList}>
