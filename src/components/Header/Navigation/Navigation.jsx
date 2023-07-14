@@ -1,14 +1,13 @@
-import { Category } from './Category/Category'
-import { Gender } from './Gender/Gender'
 import { Container } from '../../Layout/Container/Container'
 
-export const Navigation = () => {
-	return (
-		<nav>
-			<Container>
-				<Gender />
-				<Category />
-			</Container>
-		</nav>
-	)
-}
+import { Category } from './Category/Category'
+import { Gender } from './Gender/Gender'
+
+export const Navigation = () => (
+	<nav>
+		<Container>
+			<Gender />
+			<Category />
+		</Container>
+	</nav>
+)

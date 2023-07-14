@@ -1,4 +1,5 @@
 import { combineReducers } from '@reduxjs/toolkit'
+
 import navigationReducer from './features/navigationSlice'
 import colorReducer from './features/colorSlice'
 import goodsReducer from './features/goodsSlice'

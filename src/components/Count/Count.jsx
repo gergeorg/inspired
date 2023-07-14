@@ -1,4 +1,5 @@
 import cn from 'classnames'
+
 import style from './Count.module.scss'
 
 export const Count = ({ className, count, handleIncrement, handleDecrement }) => (

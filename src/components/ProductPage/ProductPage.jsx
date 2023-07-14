@@ -2,18 +2,22 @@ import { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { useParams } from 'react-router-dom'
 
+import cn from 'classnames'
+
 import { fetchProduct } from '../../features/productSlice'
-import { fetchCategory, fetchGender } from '../../features/goodsSlice'
+import { fetchCategory } from '../../features/goodsSlice'
 import { API_URL } from '../../const'
 
 import { Container } from '../Layout/Container/Container'
 import { ColorList } from '../ColorList/ColorList'
-import { ProductSize } from './ProductSize/ProductSize'
+
 import { Count } from '../Count/Count'
 import { Goods } from '../Goods/Goods'
+
 import { ReactComponent as Like } from '../../assets/like.svg'
 
-import cn from 'classnames'
+import { ProductSize } from './ProductSize/ProductSize'
+
 import style from './ProductPage.module.scss'
 
 export const ProductPage = () => {
@@ -55,7 +59,11 @@ export const ProductPage = () => {
 		<>
 			<section className={style.card}>
 				<Container className={style.container}>
-					<img className={style.image} src={`${API_URL}/${product.pic}`} alt={`${product.title} ${product.description}`} />
+					<img
+						alt={`${product.title} ${product.description}`}
+						className={style.image}
+						src={`${API_URL}/${product.pic}`}
+					/>
 					<form className={style.content}>
 						<h2 className={style.title}>{product.title}</h2>
 						<p className={style.price}>руб {product.price}</p>
@@ -66,10 +74,10 @@ export const ProductPage = () => {
 
 						<div className={style.color}>
 							<span className={cn(style.subtitle, style.colorTitle)}>Цвет</span>
-							<ColorList colors={product.colors} selectedColor={selectedColor} handleColorChange={handleColorChange} />
+							<ColorList colors={product.colors} handleColorChange={handleColorChange} selectedColor={selectedColor} />
 						</div>
 
-						<ProductSize size={product.size} selectedSize={selectedSize} handleSizeChange={handleSizeChange} />
+						<ProductSize handleSizeChange={handleSizeChange} selectedSize={selectedSize} size={product.size} />
 
 						<div className={style.description}>
 							<p className={cn(style.subtitle, style.descriptionTitle)}>Описание</p>
@@ -77,12 +85,17 @@ export const ProductPage = () => {
 						</div>
 
 						<div className={style.control}>
-							<Count className={style.count} count={count} handleIncrement={handleIncrement} handleDecrement={handleDecrement} />
+							<Count
+								className={style.count}
+								count={count}
+								handleDecrement={handleDecrement}
+								handleIncrement={handleIncrement}
+							/>
 							<button className={style.addCart} type='submit'>
 								В корзину
 							</button>
 
-							<button className={style.favorite} aria-label='Добавить товар в избранное' type='button'>
+							<button aria-label='Добавить товар в избранное' className={style.favorite} type='button'>
 								<Like />
 							</button>
 						</div>

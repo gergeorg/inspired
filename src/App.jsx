@@ -12,13 +12,13 @@ import { ProductPage } from './components/ProductPage/ProductPage'
 
 const router = createBrowserRouter(
 	createRoutesFromElements(
-		<Route path='/' element={<Root />}>
+		<Route element={<Root />} path='/'>
 			<Route index element={<MainPage />} />
-			<Route path='catalog/:gender/:category?' element={<MainPage />} />
-			<Route path='product/:id' element={<ProductPage />} />
-			<Route path='*' element={<ErrorPage />} />
-		</Route>
-	)
+			<Route element={<MainPage />} path='catalog/:gender/:category?' />
+			<Route element={<ProductPage />} path='product/:id' />
+			<Route element={<ErrorPage />} path='*' />
+		</Route>,
+	),
 )
 
 export const App = () => {
@@ -29,5 +29,5 @@ export const App = () => {
 		dispatch(fetchColors())
 	}, [dispatch])
 
-	return <RouterProvider router={router}></RouterProvider>
+	return <RouterProvider router={router} />
 }

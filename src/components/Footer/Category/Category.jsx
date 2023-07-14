@@ -1,7 +1,7 @@
 import { NavLink } from 'react-router-dom'
+import { useSelector } from 'react-redux'
 
 import style from './Category.module.scss'
-import { useSelector } from 'react-redux'
 
 export const Category = () => {
 	const { genderList, categories } = useSelector((state) => state.navigation)

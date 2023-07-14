@@ -10,16 +10,16 @@ export const ColorLabel = ({ color, check, selectedColor, handleColorChange }) =
 	}, [color])
 
 	return (
-		<label className={style.color} ref={colorRef}>
+		<label ref={colorRef} className={style.color}>
 			<input
-				className={style.input}
-				type='radio'
-				name='color'
-				value={color?.title}
 				checked={selectedColor ? selectedColor === color?.title : check}
+				className={style.input}
+				name='color'
+				type='radio'
+				value={color?.title}
 				onChange={handleColorChange}
 			/>
-			<span className={style.colorCheck}></span>
+			<span className={style.colorCheck} />
 		</label>
 	)
 }

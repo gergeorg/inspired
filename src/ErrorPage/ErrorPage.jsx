@@ -1,4 +1,5 @@
 import { useRouteError } from 'react-router-dom'
+
 import { Container } from '../components/Layout/Container/Container'
 
 import style from './ErrorPage.module.scss'
