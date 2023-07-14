@@ -9,13 +9,17 @@ import { ErrorPage } from './ErrorPage/ErrorPage'
 import { fetchNavigation } from './features/navigationSlice'
 import { fetchColors } from './features/colorSlice'
 import { ProductPage } from './components/ProductPage/ProductPage'
+import { CartPage } from './components/CartPage/CartPage'
+import { FavoritePage } from './components/FavoritePage/FavoritePage'
 
 const router = createBrowserRouter(
 	createRoutesFromElements(
 		<Route element={<Root />} path='/'>
 			<Route index element={<MainPage />} />
-			<Route element={<MainPage />} path='catalog/:gender/:category?' />
-			<Route element={<ProductPage />} path='product/:id' />
+			<Route element={<MainPage />} path='/catalog/:gender/:category?' />
+			<Route element={<ProductPage />} path='/product/:id' />
+			<Route element={<CartPage />} path='/cart' />
+			<Route element={<FavoritePage />} path='/favorite' />
 			<Route element={<ErrorPage />} path='*' />
 		</Route>,
 	),

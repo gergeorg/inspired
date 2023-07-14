@@ -14,7 +14,7 @@ import { ColorList } from '../ColorList/ColorList'
 import { Count } from '../Count/Count'
 import { Goods } from '../Goods/Goods'
 
-import { ReactComponent as Like } from '../../assets/like.svg'
+import { BtnFavorite } from '../BtnFavorite/BtnFavorite'
 
 import { ProductSize } from './ProductSize/ProductSize'
 
@@ -95,9 +95,7 @@ export const ProductPage = () => {
 								В корзину
 							</button>
 
-							<button aria-label='Добавить товар в избранное' className={style.favorite} type='button'>
-								<Like />
-							</button>
+							<BtnFavorite id={id} />
 						</div>
 					</form>
 				</Container>
