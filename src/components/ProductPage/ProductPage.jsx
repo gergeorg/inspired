@@ -5,7 +5,7 @@ import { useParams } from 'react-router-dom'
 import cn from 'classnames'
 
 import { fetchProduct } from '../../features/productSlice'
-import { fetchCategory } from '../../features/goodsSlice'
+import { fetchData } from '../../features/goodsSlice'
 import { API_URL } from '../../const'
 
 import { Container } from '../Layout/Container/Container'
@@ -52,7 +52,7 @@ export const ProductPage = () => {
 	}, [id, dispatch])
 
 	useEffect(() => {
-		dispatch(fetchCategory({ gender, category, count: 4, top: true, exclude: id }))
+		dispatch(fetchData({ gender, category, count: 4, top: true, exclude: id }))
 	}, [gender, category, id, dispatch])
 
 	return (
