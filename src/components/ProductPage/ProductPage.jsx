@@ -6,6 +6,7 @@ import cn from 'classnames'
 
 import { fetchProduct } from '../../features/productSlice'
 import { fetchData } from '../../features/goodsSlice'
+import { addToCart } from '../../features/cartSlice'
 import { API_URL } from '../../const'
 
 import { Container } from '../Layout/Container/Container'
@@ -25,7 +26,8 @@ export const ProductPage = () => {
 	const { id } = useParams()
 	const { product } = useSelector((state) => state.product)
 
-	const { gender, category } = product
+	const { gender, category, colors } = product
+	const { colorList } = useSelector((state) => state.color)
 
 	const [selectedColor, setSelectedColor] = useState('')
 	const [selectedSize, setSelectedSize] = useState('')
@@ -55,6 +57,12 @@ export const ProductPage = () => {
 		dispatch(fetchData({ gender, category, count: 4, top: true, exclude: id }))
 	}, [gender, category, id, dispatch])
 
+	useEffect(() => {
+		if (colorList?.length && colors?.length) {
+			setSelectedColor(colorList.find((color) => color.id === colors[0].title))
+		}
+	}, [colorList, colors])
+
 	return (
 		<>
 			<section className={style.card}>
@@ -64,7 +72,13 @@ export const ProductPage = () => {
 						className={style.image}
 						src={`${API_URL}/${product.pic}`}
 					/>
-					<form className={style.content}>
+					<form
+						className={style.content}
+						onSubmit={(e) => {
+							e.preventDefault()
+							dispatch(addToCart({ id, color: selectedColor, size: selectedSize, count }))
+						}}
+					>
 						<h2 className={style.title}>{product.title}</h2>
 						<p className={style.price}>руб {product.price}</p>
 						<div className={style.vendorCode}>
@@ -74,7 +88,7 @@ export const ProductPage = () => {
 
 						<div className={style.color}>
 							<span className={cn(style.subtitle, style.colorTitle)}>Цвет</span>
-							<ColorList colors={product.colors} handleColorChange={handleColorChange} selectedColor={selectedColor} />
+							<ColorList colors={colors} handleColorChange={handleColorChange} selectedColor={selectedColor} />
 						</div>
 
 						<ProductSize handleSizeChange={handleSizeChange} selectedSize={selectedSize} size={product.size} />
