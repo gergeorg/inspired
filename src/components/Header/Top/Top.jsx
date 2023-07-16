@@ -1,7 +1,9 @@
 import cn from 'classnames'
 
 import { NavLink } from 'react-router-dom'
-import { useSelector } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
+
+import { toggleSearch } from '../../../features/searchSlice'
 
 import { Container } from '../../Layout/Container/Container'
 
@@ -15,6 +17,11 @@ import style from './Top.module.scss'
 
 export const Top = () => {
 	const { countItems } = useSelector((state) => state.cart)
+	const dispatch = useDispatch()
+
+	const handleOpenSearch = () => {
+		dispatch(toggleSearch())
+	}
 
 	return (
 		<div className={style.top}>
@@ -30,7 +37,7 @@ export const Top = () => {
 				<div className={style.navigation}>
 					<ul className={style.navList}>
 						<li className={style.navItem}>
-							<button className={style.link} type='button'>
+							<button className={style.link} type='button' onClick={handleOpenSearch}>
 								<Search />
 							</button>
 						</li>
