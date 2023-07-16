@@ -5,6 +5,10 @@ import { Goods } from '../Goods/Goods'
 import { fetchData } from '../../features/goodsSlice'
 import { usePageFromSearchParams } from '../../hooks/usePageFromSearchParams'
 
+import { Container } from '../Layout/Container/Container'
+
+import style from './FavoritePage.module.scss'
+
 export const FavoritePage = () => {
 	const dispatch = useDispatch()
 	const favorites = useSelector((state) => state.favorites)
@@ -22,5 +26,11 @@ export const FavoritePage = () => {
 		}
 	}, [favorites, page, dispatch])
 
-	return <Goods title='Избранное' />
+	return favorites.length ? (
+		<Goods title='Избранное' />
+	) : (
+		<Container>
+			<h3 className={style.empty}>Тут пока пусто. Добавьте товар в избранное</h3>
+		</Container>
+	)
 }
