@@ -1,16 +1,19 @@
 import { ErrorMessage, Field, Form, Formik } from 'formik'
 import { PatternFormat } from 'react-number-format'
 import * as Yup from 'yup'
+import { useDispatch } from 'react-redux'
+
+import { sendOrder } from '../../../features/cartSlice.js'
 
 import { Container } from '../../Layout/Container/Container.jsx'
 
 import style from './Order.module.scss'
 
 export const Order = ({ cartItems }) => {
+	const dispatch = useDispatch()
 	const handleSubmitOrder = (values) => {
-		console.log(cartItems, values)
+		dispatch(sendOrder({ order: cartItems, values }))
 	}
-
 	const validationSchema = Yup.object({
 		fio: Yup.string().required('Заполните ФИО'),
 		address: Yup.string().test('deliveryTest', 'Введите адрес доставки', function (value) {
