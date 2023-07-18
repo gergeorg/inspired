@@ -3,13 +3,15 @@ import { useEffect, useState } from 'react'
 
 import { fetchAll } from '../../features/goodsSlice'
 
+import { Preloader } from '../Preloader/Preloader'
+
 import { Cart } from './Cart/Cart'
 import { Order } from './Order/Order'
 import { OrderModal } from './OrderModal/OrderModal'
 
 export const CartPage = () => {
 	const { cartItems, countItems } = useSelector((state) => state.cart)
-	const { goodsList } = useSelector((state) => state.goods)
+	const { goodsList, status } = useSelector((state) => state.goods)
 	const { orderStatus } = useSelector((state) => state.cart)
 
 	const [count, setCount] = useState(0)
@@ -22,10 +24,12 @@ export const CartPage = () => {
 		}
 	}, [cartItems, count, countItems, dispatch])
 
-	return (
+	return status === 'loading' ? (
+		<Preloader />
+	) : (
 		<>
 			<Cart cartItems={cartItems} goodsList={goodsList} />
-			{goodsList.length ? <Order cartItems={cartItems} /> : ''}
+			{!!cartItems.length && <Order cartItems={cartItems} />}
 			{orderStatus === 'success' && <OrderModal />}
 		</>
 	)
