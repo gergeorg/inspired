@@ -2,7 +2,7 @@
 
 ### Demo
 
-/тут когда-то будет ссылка на собранный проект/
+https://inspired-lake.vercel.app/
 
 ### Used:
 
