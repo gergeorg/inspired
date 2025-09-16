@@ -1,4 +1,4 @@
-export const API_URL = 'https://api-inspired-1.onrender.com//'
+export const API_URL = 'https://api-inspired-1.onrender.com'
 
 export const GOODS_URL = `${API_URL}/api/goods`
 export const CATEGORY_URL = `${API_URL}/api/categories`
