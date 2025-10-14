@@ -2,7 +2,7 @@
 
 ### Demo
 
-https://inspired-lake.vercel.app/
+https://inspired-git-main-gergeorgs-projects.vercel.app/
 
 ### Used:
 
