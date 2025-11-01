@@ -11,7 +11,8 @@
 
 ---
 
-## 🌐 [Демо проекта →]([https://inspired-git-main-gergeorgs-projects.vercel.app/](https://inspired-6kki.onrender.com/))
+## 🌐 [Демо проекта →]
+[https://inspired-git-main-gergeorgs-projects.vercel.app/](https://inspired-6kki.onrender.com/)
 
 ---
 
