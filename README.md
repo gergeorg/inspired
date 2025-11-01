@@ -1,23 +1,154 @@
-# Inspired - магазин женского и мужского нижнего белья
+# 🛍️ Inspired - магазин женского и мужского нижнего белья
 
-### Demo
+![Render Deploy](https://img.shields.io/badge/deployed%20on-Render-black?logo=render)
+![React](https://img.shields.io/badge/React-18.2.0-blue?logo=react)
+![Redux Toolkit](https://img.shields.io/badge/Redux%20Toolkit-1.9.5-purple?logo=redux)
+![Vite](https://img.shields.io/badge/Vite-4.3.9-8A2BE2?logo=vite)
+![License](https://img.shields.io/badge/license-MIT-green)
 
-https://inspired-git-main-gergeorgs-projects.vercel.app/
+> 🧥 **Inspired** — это стильный интернет-магазин нижнего белья, созданный на **React + Redux Toolkit + Vite**,  
+> с современной архитектурой, отзывчивым интерфейсом и продуманной структурой компонентов.
 
-### Used:
+---
 
-- [Vite](https://vitejs.dev/)
-- [React](https://react.dev/) v.18.2
-- [React Router](https://reactrouter.com/en/main) v.6.14
-- [Redux Toolkit](https://redux-toolkit.js.org/) v.1.9.5
-- Style: sass + CSS Modules
+## 🌐 [Демо проекта →]([https://inspired-git-main-gergeorgs-projects.vercel.app/](https://inspired-6kki.onrender.com/))
 
-### `npm run dev`
+---
 
-Runs the app in the development mode.
-Open [http://localhost:5173](http://localhost:5173) to view it in your browser.
 
-### `npm run build`
+## ⚙️ Технологии
 
-Builds the app for production to the `build` folder.
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Проект собран с использованием современных инструментов фронтенд-разработки:
+
+| Категория | Технологии |
+|------------|-------------|
+| **Основные** | React 18, Redux Toolkit, React Router DOM |
+| **Форма и валидация** | Formik, Yup |
+| **UI и стили** | SCSS-модули, normalize.css |
+| **Утилиты** | react-use, react-number-format |
+| **Скелетоны и загрузка** | react-content-loader, react-loader-spinner |
+| **Сборка и инструменты** | Vite, ESLint, Prettier |
+
+---
+
+## 🧩 Основные возможности
+
+- 🌈 Просмотр каталога товаров  
+- 🔍 Поиск и фильтрация  
+- 💖 Добавление в избранное  
+- 🛒 Управление корзиной  
+- 📦 Оформление заказа  
+- 📱 Полностью адаптивный дизайн  
+- ⚡ Молниеносная сборка и разработка через **Vite**  
+- 🧠 Централизованное управление состоянием на **Redux Toolkit**  
+
+---
+
+## 🚀 Установка и запуск
+
+### 1. Клонируйте репозиторий
+```bash
+git clone https://github.com/gergeorg/inspired.git
+cd inspired
+```
+
+### 2. Установите зависимости
+
+```bash
+npm install
+```
+
+### 3. Запустите проект
+
+```bash
+npm run dev
+```
+
+### После запуска проект будет доступен по адресу:
+👉 http://localhost:5173
+
+---
+
+### 🧰 **Скрипты**
+
+
+| Команда | Назначение |
+|----------|-------------|
+| `npm run dev` | Запуск локального сервера разработки |
+| `npm run build` | Сборка проекта для продакшена |
+| `npm run preview` | Просмотр собранной версии |
+| `npm run lint` | Проверка кода с помощью ESLint |
+
+---
+
+## 🗂️ Структура проекта
+```bash
+.
+├── README.md
+├── index.html
+├── package-lock.json
+├── package.json
+├── vercel.json
+├── vite.config.js
+└── src
+    ├── App.jsx
+    ├── main.jsx
+    ├── index.scss
+    ├── fonts.scss
+    ├── const.js
+    ├── rootReducer.js
+    ├── store.js
+    ├── hooks/
+    │   └── usePageFromSearchParams.js
+    ├── routes/
+    │   └── Root.jsx
+    ├── features/              # Redux slices (cart, favorites, goods, navigation и др.)
+    │   ├── cartSlice.js
+    │   ├── colorSlice.js
+    │   ├── favoritesSlice.js
+    │   ├── goodsSlice.js
+    │   ├── navigationSlice.js
+    │   ├── productSlice.js
+    │   ├── searchSlice.js
+    │   └── statusServerSlice.js
+    ├── ErrorPage/
+    │   ├── ErrorPage.jsx
+    │   └── ErrorPage.module.scss
+    ├── assets/
+    │   ├── fonts/
+    │   └── ...
+    ├── components/
+    │   ├── Banner/
+    │   ├── BtnFavorite/
+    │   ├── CartPage/
+    │   ├── ColorList/
+    │   ├── Count/
+    │   ├── FavoritePage/
+    │   ├── Footer/
+    │   ├── Goods/
+    │   ├── Header/
+    │   ├── Layout/
+    │   ├── MainPage/
+    │   ├── Pagination/
+    │   ├── Preloader/
+    │   ├── Product/
+    │   ├── ProductPage/
+    │   ├── Search/
+    │   ├── SearchPage/
+    │   └── Skeleton/
+```
+
+---
+
+## 👨‍💻 Автор
+
+**Georgey Gerasimov**  
+
+🔗 [GitHub](https://github.com/gergeorg)  
+
+---
+
+## 🪪 Лицензия
+
+Проект распространяется под лицензией **MIT**.  
+Вы можете свободно использовать, изменять и распространять этот код с указанием автора.
